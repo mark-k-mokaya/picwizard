@@ -1,4 +1,5 @@
 import * as dotenv from 'dotenv';
+import path from 'path';
 dotenv.config();
 
 import express, {response} from 'express';
@@ -7,6 +8,13 @@ import cors from 'cors';
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static(path.join(__dirname, 'dist')));
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(_dirname, 'dist', 'index.html'));
+	});
+}
 
 app.post('/picwizard', async (req, res) => {
 	const response = await fetch(
