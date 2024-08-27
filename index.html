@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PicWizard</title>
+	</head>
+	<body>
+		<main>
+			<img class="logo" src="/logo.png" width="300" />
+			<div id="result">
+				<img src="/wizard.jpg" width="512" />
+			</div>
+			<form>
+				<label for="prompt">Enter your prompt below</label>
+				<textarea
+					name="prompt"
+					maxlength="160"
+					placeholder="A mystical wizard dressed in purple"></textarea>
+				<button type="submit">Generate</button>
+			</form>
+		</main>
+
+		<script type="module" src="/main.js"></script>
+	</body>
+</html>
