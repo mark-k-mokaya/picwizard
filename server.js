@@ -1,5 +1,4 @@
 import * as dotenv from 'dotenv';
-import path from 'path';
 dotenv.config();
 
 import express, {response} from 'express';
@@ -10,6 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
+	const path = require('path');
 	app.use(express.static(path.join(__dirname, 'dist')));
 	app.get('*', (req, res) => {
 		res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
