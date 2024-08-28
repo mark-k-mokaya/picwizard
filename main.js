@@ -6,7 +6,7 @@ form.addEventListener('submit', async (event) => {
 	showSpinner();
 	event.preventDefault();
 	const data = new FormData(form);
-	const response = await fetch('http://localhost:8080/picwizard', {
+	const response = await fetch('/picwizard', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
